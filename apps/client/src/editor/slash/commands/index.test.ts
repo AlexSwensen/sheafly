@@ -16,6 +16,7 @@ describe('slash commands', () => {
       'Quote',
       'Code',
       'Divider',
+      'Emoji',
     ]);
     for (const c of COMMANDS) {
       expect(c.title).toBeTruthy();

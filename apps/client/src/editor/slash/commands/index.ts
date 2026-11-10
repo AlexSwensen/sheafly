@@ -9,6 +9,7 @@ import { todoList } from './todoList';
 import { quote } from './quote';
 import { code } from './code';
 import { divider } from './divider';
+import { emojiCommand } from './emoji';
 
 export const COMMANDS: Command[] = [
   text,
@@ -21,6 +22,7 @@ export const COMMANDS: Command[] = [
   quote,
   code,
   divider,
+  emojiCommand,
 ];
 
 export function filterCommands(query: string) {

@@ -75,4 +75,13 @@ describe('slash commands', () => {
     await user.keyboard('{Escape}');
     await waitFor(() => expect(screen.queryByText('Basic blocks')).toBeNull());
   });
+
+  it('triggers emoji document picker from slash command', async () => {
+    const user = await renderEditor();
+    await user.keyboard('/emoji');
+    await waitFor(() => expect(screen.getByText('Emoji')).toBeTruthy());
+
+    await user.keyboard('{Enter}');
+    await waitFor(() => expect(screen.getByText('Insert emoji into document')).toBeTruthy());
+  });
 });
