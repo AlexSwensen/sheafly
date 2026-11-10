@@ -5,10 +5,12 @@ import Placeholder from '@tiptap/extension-placeholder';
 import TaskList from '@tiptap/extension-task-list';
 import TaskItem from '@tiptap/extension-task-item';
 import Highlight from '@tiptap/extension-highlight';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { LocalNote } from '../lib/db';
 import { updateNote } from '../lib/notes';
 import { SlashCommand } from './SlashCommand';
+import { EmojiSuggestion } from './EmojiSuggestion';
+import { EmojiPicker } from '../components/EmojiPicker';
 
 const SAVE_DELAY = 400;
 
@@ -30,6 +32,7 @@ export function NoteEditor({
   const baseline = useRef<string | null>(null);
   // The note.content we last applied or saved, to detect genuinely remote changes.
   const knownContent = useRef(JSON.stringify(note.content ?? null));
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
   const editor = useEditor({
     extensions: [
@@ -42,6 +45,7 @@ export function NoteEditor({
       TaskItem.configure({ nested: true }),
       Highlight,
       SlashCommand,
+      EmojiSuggestion,
     ],
     content: note.content ?? '',
     editable,
@@ -96,6 +100,13 @@ export function NoteEditor({
   useEffect(() => {
     editor?.setEditable(editable, false);
   }, [editor, editable]);
+
+  // Listen for the slash command / external trigger to open the document emoji picker
+  useEffect(() => {
+    const onOpenPicker = () => setShowEmojiPicker(true);
+    window.addEventListener('sheafly:open-emoji-picker', onOpenPicker);
+    return () => window.removeEventListener('sheafly:open-emoji-picker', onOpenPicker);
+  }, []);
 
   if (!editor) return null;
 
@@ -155,8 +166,30 @@ export function NoteEditor({
         >
           🔗
         </button>
+        <button
+          className={markButton(false)}
+          title="Insert emoji"
+          onClick={() => setShowEmojiPicker(true)}
+        >
+          😀
+        </button>
       </BubbleMenu>
       <EditorContent editor={editor} />
+      {showEmojiPicker && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 p-4">
+          <EmojiPicker
+            title="Insert emoji into document"
+            onPick={(emoji) => {
+              editor.chain().focus().insertContent(emoji).run();
+              setShowEmojiPicker(false);
+            }}
+            onClose={() => {
+              setShowEmojiPicker(false);
+              editor.commands.focus();
+            }}
+          />
+        </div>
+      )}
     </>
   );
 }
