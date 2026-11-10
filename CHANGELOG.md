@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/AlexSwensen/sheafly/compare/v1.3.1...v1.4.0) (2026-11-10)
+
+### Features
+
+* **emoji:** add comprehensive emoji picker and document insertion ([2ba2144](https://github.com/AlexSwensen/sheafly/commit/2ba2144f6e9aa402aeb241f3c25f66ade427508f))
+
 ## [1.3.1](https://github.com/AlexSwensen/sheafly/compare/v1.3.0...v1.3.1) (2026-11-06)
 
 ### Bug Fixes
