@@ -1,5 +1,3 @@
-
-<?xml version="1.0" encoding="UTF-8"?>
 <CommunityApplications>
   <Profile>
     Sheafly is a self-hosted, Notion-style notes application with cloud synchronization, offline support, and instant full-text search. It runs as a lightweight Docker container with a SQLite database and supports desktop, mobile, and progressive web app experiences.
@@ -8,6 +6,12 @@
 
     For installation instructions, configuration, documentation, and support, visit the GitHub repository.
   </Profile>
-
+  <Icon>https://raw.githubusercontent.com/AlexSwensen/sheafly/main/apps/client/public/pwa-512x512.png</Icon>
   <WebPage>https://github.com/AlexSwensen/sheafly</WebPage>
+  <!-- Optional support links -->
+  <!-- <Forum>https://forums.unraid.net/topic/YOUR_SUPPORT_TOPIC</Forum> -->
+  <!-- <Discord>https://discord.gg/YOUR_INVITE_CODE</Discord> -->
+  <!-- Optional profile extras -->
+  <!-- <DonateLink>https://github.com/sponsors/YOUR_GITHUB_USERNAME</DonateLink> -->
+  <!-- <DonateText>Support this project</DonateText> -->
 </CommunityApplications>
