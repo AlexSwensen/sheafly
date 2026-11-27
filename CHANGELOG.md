@@ -1,3 +1,9 @@
+## [1.4.1](https://github.com/AlexSwensen/sheafly/compare/v1.4.0...v1.4.1) (2026-11-27)
+
+### Bug Fixes
+
+* add a sheafly ca_profile.xml for unraid community applications ([0843a82](https://github.com/AlexSwensen/sheafly/commit/0843a825e546468742f71ba569347149d28c6bb7))
+
 ## [1.4.0](https://github.com/AlexSwensen/sheafly/compare/v1.3.1...v1.4.0) (2026-11-10)
 
 ### Features
