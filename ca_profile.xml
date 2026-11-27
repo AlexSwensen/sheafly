@@ -1,0 +1,13 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<CommunityApplications>
+  <Profile>
+    Sheafly is a self-hosted, Notion-style notes application with cloud synchronization, offline support, and instant full-text search. It runs as a lightweight Docker container with a SQLite database and supports desktop, mobile, and progressive web app experiences.
+
+    Features include a block-based editor, nested pages, favorites, search, automatic synchronization across devices, offline editing, and light/dark themes.
+
+    For installation instructions, configuration, documentation, and support, visit the GitHub repository.
+  </Profile>
+
+  <WebPage>https://github.com/AlexSwensen/sheafly</WebPage>
+</CommunityApplications>
