@@ -1,3 +1,9 @@
+## [1.4.2](https://github.com/AlexSwensen/sheafly/compare/v1.4.1...v1.4.2) (2026-11-27)
+
+### Bug Fixes
+
+* template structure ([7369228](https://github.com/AlexSwensen/sheafly/commit/7369228f958a9eedfae2909bf371e769578b3f83))
+
 ## [1.4.1](https://github.com/AlexSwensen/sheafly/compare/v1.4.0...v1.4.1) (2026-11-27)
 
 ### Bug Fixes
