@@ -61,10 +61,10 @@ Every release publishes a multi-arch image (amd64 and arm64) to `ghcr.io/alexswe
 
    ```bash
    wget -O /boot/config/plugins/dockerMan/templates-user/my-sheafly.xml \
-     https://raw.githubusercontent.com/AlexSwensen/sheafly/main/unraid/sheafly.xml
+     https://raw.githubusercontent.com/AlexSwensen/sheafly/main/templates/sheafly.xml
    ```
 
-   Or copy [`unraid/sheafly.xml`](unraid/sheafly.xml) there yourself. The file name must start with `my-`.
+   Or copy [`templates/sheafly.xml`](templates/sheafly.xml) there yourself. The file name must start with `my-`.
 
 2. On the **Docker** tab, click **Add Container** and pick **sheafly** under **User templates** in the **Template** dropdown.
 3. Check the port and data path (default `/mnt/user/appdata/sheafly`), then click **Apply**.
